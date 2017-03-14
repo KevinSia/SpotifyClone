@@ -15,15 +15,39 @@ And thus the usage of ActiveRecords, RESTFUL Routes and MVC is a **requirement**
 6 hours. Cut off time is 4.30pm.
 
 # What You Will Need to Do
-1. First,  `FORK` this repository and `git clone` it to your local machine.
-2. Wireframe and design your database structure.
-3. Start coding!
-4. Commit your code as often as possible into your own forked repository.
- - git add .
- - git commit -m "login feature is added"  (for example, commit message according to added feature)
- - git push origin master.
-5. Once done, inform a mentor about your completion, slack us your github repo address.
-6. Demo your app and walk the mentor through your code to show an understanding of the concepts.
+1) FORK this repo out by clicking the "**Fork**" button on the top right side of the GitHub page.
+
+```
+$ cd ~/Desktop
+```
+
+2) Git clone your own forked repo.
+
+```
+$ git clone <your repo address>
+```
+
+3) Navigate into the repo.
+```
+$ cd <repo-name>
+```
+
+4) Start writing your code
+
+```
+Remember to commit small and often. Some good references:
+$ git add .
+$ git commit
+    - i
+    - Write your commit message
+    - Esc
+    - :wq!
+$ git push origin master
+```
+
+5) Once done, call a mentor and Slack him/her your GitHub repo link.
+
+6) The mentor will assess your performance.
 
 
 # Requirements
