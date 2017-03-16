@@ -11,7 +11,7 @@
     <% else %>
       <% @playlist.songs.each do |s| %>
       <li>
-        (<%= s.duration %>) <%= s.title.capitalize %> - <%= s.artist.capitalize %> [<%= s.album.capitalize %>]
+        <%= s.details %>
         <form action="/songs/<%= s.id %>/edit" method="get">
           <button type="submit">EDIT IT</button>
         </form>

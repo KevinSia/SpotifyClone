@@ -1,4 +1,18 @@
-<p>THE NAME IS <%= @user.name %></p>
-<p>EMAIL IS <%= @user.email %></p>
+<h1>DUDE IS YOUR PROFILE!</h1>
+<p><strong>THE NAME IS </strong><%= @user.name %></p>
+<p><strong>EMAIL IS </strong><%= @user.email %></p>
 <% if current_user.id == @user.id %>
-<a href="/users/<%= current_user.id %>">EDIT THIS SHIT</a>
+  <a href="/users/<%= current_user.id %>">EDIT YOUR SHITTY PROFILE</a>
+<% end %>
+
+<h3>THEIR SICK PLAYLISTS</h3>
+<ul>
+  <% @user.playlists.each do |p| %>
+    <li><%= p.name %></li>
+    <ol>
+      <% p.songs.each do |s| %>
+        <li><%= s.details %></li>
+      <% end %>
+    </ol>
+  <% end %>
+</ul>

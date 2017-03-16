@@ -17,7 +17,7 @@ post "/users" do
 end
 
 get "/users/:id" do
-  @user = User.find_by_id(params[:id])
+  @user = User.includes(:playlists).where(id: params[:id]).first
   erb :"users/show"
 end
 
