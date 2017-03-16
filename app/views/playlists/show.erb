@@ -4,7 +4,10 @@
   SONG LIST:
   <ol>
     <% if @playlist.songs.empty? %>
-      BOO NO SONGS. <a href="/songs/new">PLS ADD.</a>
+      BOO NO SONGS.
+      <% if current_user.id == @playlist.user_id %>
+        <a href="/songs/new">PLS ADD.</a>
+      <% end %>
     <% else %>
       <% @playlist.songs.each do |s| %>
       <li>

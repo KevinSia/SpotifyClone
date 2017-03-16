@@ -1,3 +1,10 @@
+before /\/users\/(\d+)(\/\w+)?/ do
+  @user = User.find(params["captures"].first)
+  pass if request.get? && params['captures'].second != '/edit'
+  flash[:failure] = "NOT YOURS!"
+  redirect '/' if current_user.id != @user.id
+end
+
 post "/users" do
   user = User.new(params[:user])
   if user.save

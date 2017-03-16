@@ -9,7 +9,6 @@ get '/playlists/:id' do
   erb :"playlists/show"
 end
 
-
 post '/playlists' do
   playlist = current_user.playlists.new(params[:playlist])
   if playlist.save

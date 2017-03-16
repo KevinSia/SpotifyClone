@@ -7,7 +7,7 @@ or
 <ol class="playlists">
   <% current_user.playlists.each do |p| %>
     <li>
-      <%= p.user.name %> - <a href='/playlists/<%= p.id %>'><%= p.name %></a>
+      <a href='/playlists/<%= p.id %>'><%= p.name %></a>
       <form action="/playlists/<%= p.id %>/edit" method="get">
         <button type="submit" name="button">EDIT IT</button>
       </form>

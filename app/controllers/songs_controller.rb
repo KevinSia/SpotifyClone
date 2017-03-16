@@ -1,3 +1,10 @@
+before /\/songs\/(\d+)(\/\w+)?/ do
+  @song = Song.find(params["captures"].first)
+  pass if request.get? && params['captures'].second != '/edit'
+  flash[:failure] = "NOT YOURS!"
+  redirect '/' if current_user.id != @song.user_id
+end
+
 get '/songs/new' do
   @playlists = current_user.playlists
   erb :"songs/new"
