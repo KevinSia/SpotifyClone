@@ -1,0 +1,28 @@
+<h1>ELO, <a href="/users/<%= current_user.id %>">YOU</a></h1>
+<a href="/songs/new">NEW FREAKIN SONG</a>
+or
+<a href="/playlists/new">NEW FREAKIN PLAYLIST</a>
+
+<h2>YOUR POISONS</h2>
+<ol class="playlists">
+  <% current_user.playlists.each do |p| %>
+    <li>
+      <%= p.user.name %> - <a href='/playlists/<%= p.id %>'><%= p.name %></a>
+      <form action="/playlists/<%= p.id %>/edit" method="get">
+        <button type="submit" name="button">EDIT IT</button>
+      </form>
+      <form action="/playlists/<%= p.id %>" method="post">
+        <button type="submit" name="button" onclick="return confirm('Are you sure?')">DUMP IT</button>
+      </form>
+    </li>
+  <% end %>
+</ol>
+
+<h2>OTHER POISONS</h2>
+<ol class='playlists'>
+  <% @playlists.each do |p| %>
+    <li>
+      <%= p.user.name %> - <a href='/playlists/<%= p.id %>'><%= p.name %></a>
+    </li>
+  <% end %>
+</ol>

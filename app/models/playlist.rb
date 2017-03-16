@@ -1,3 +1,6 @@
 class Playlist < ActiveRecord::Base
-	# This is Sinatra! Remember to create a migration!
+	has_many :songs
+	belongs_to :user
+
+	validates :name, length: { minimum: 6 }
 end

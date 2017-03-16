@@ -1,0 +1,9 @@
+<h1>EDIT YO SICK PROFILE</h1>
+<%= @error if @error %>
+<form action="/users" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="user[name]" placeholder="NAME" value="<%= current_user.name %>">
+  <input type="text" name="user[email]" placeholder="EMAIL" value="<%= current_user.email %>">
+  <input type="password" name="user[password]" placeholder="PASSWORD">
+  <input type="submit" value="OK">
+</form>

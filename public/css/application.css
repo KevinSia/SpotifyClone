@@ -1,0 +1,7 @@
+.playlists form {
+  display: inline;
+}
+
+#songs > ol > li > form {
+  display: inline;
+}

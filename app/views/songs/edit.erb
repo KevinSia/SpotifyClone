@@ -1,0 +1,17 @@
+<h1>CHANGE YA SONG!</h1>
+<%= @error if @error %>
+<form action="/songs/<%= @song.id %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <div><input type="text" name="song[title]" placeholder="SEXY NAME" value="<%= @song.title %>"></div>
+  <div><input type="text" name="song[artist]" placeholder="HOT ARTIST" value="<%= @song.artist %>"></div>
+  <div><input type="text" name="song[album]" placeholder="COOL ALBUM" value="<%= @song.album %>"></div>
+  <div><input type="text" name="song[duration]" placeholder="ADEQUATE LENGTH" value="<%= @song.duration %>"></div>
+  <div>
+    <select name="song[playlist_id]">
+      <% @playlists.each do |p| %>
+        <option value="<%= p.id %>" <%= "selected" if p.id == @song.playlist_id %>><%= p.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <input type="submit" value="AWW YEAH">
+</form>

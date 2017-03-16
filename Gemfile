@@ -10,6 +10,7 @@ gem 'byebug'
 # Adding Sinatra Drivers
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-flash'
 
 # Adding thin gem as advised
 gem 'thin'
@@ -27,6 +28,7 @@ gem 'rake'
 
 # Adding rspec for running unit testing
 gem 'rspec'
+
 
 group :development, :test do
 	# Adding shotgun for local web hosting

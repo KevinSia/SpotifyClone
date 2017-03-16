@@ -1,0 +1,6 @@
+<h1>CREATE AWESOME PLAYLIST YO</h1>
+<%= @error if @error %>
+<form action="/playlists" method="post">
+  <input type="text" name="playlist[name]" placeholder="NAME">
+  <input type="submit" value="YEAH!">
+</form>

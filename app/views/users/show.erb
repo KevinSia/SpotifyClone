@@ -1,0 +1,4 @@
+<p>THE NAME IS <%= @user.name %></p>
+<p>EMAIL IS <%= @user.email %></p>
+<% if current_user.id == @user.id %>
+<a href="/users/<%= current_user.id %>">EDIT THIS SHIT</a>

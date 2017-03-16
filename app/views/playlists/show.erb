@@ -1,0 +1,22 @@
+<h1>YOUR LIT PLAYLIST: <%= @playlist.name %></h1>
+
+<div id="songs">
+  SONG LIST:
+  <ol>
+    <% if @playlist.songs.empty? %>
+      BOO NO SONGS. <a href="/songs/new">PLS ADD.</a>
+    <% else %>
+      <% @playlist.songs.each do |s| %>
+      <li>
+        (<%= s.duration %>) <%= s.title.capitalize %> - <%= s.artist.capitalize %> [<%= s.album.capitalize %>]
+        <form action="/songs/<%= s.id %>/edit" method="get">
+          <button type="submit">EDIT IT</button>
+        </form>
+        <form action="/songs/<%= s.id %>" method="post">
+          <button type="submit" name="button" onclick="return confirm('Are you sure?')">DUMP IT</button>
+        </form>
+      </li>
+      <% end %>
+    <% end %>
+  </ol>
+</div>

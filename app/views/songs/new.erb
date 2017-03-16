@@ -1,0 +1,20 @@
+<h1>YEAH NEW SONG!</h1>
+<%= @error if @error %>
+<% if @playlists.empty? %>
+  BOO NO PLAYLIST! <a href="/playlists/new">CREATE ONE</a>
+<% else %>
+  <form action="/songs" method="post">
+    <div><input type="text" name="song[title]" placeholder="SEXY NAME"></div>
+    <div><input type="text" name="song[artist]" placeholder="HOT ARTIST"></div>
+    <div><input type="text" name="song[album]" placeholder="COOL ALBUM"></div>
+    <div><input type="text" name="song[duration]" placeholder="ADEQUATE LENGTH"></div>
+    <div>
+      <select name="song[playlist_id]">
+        <% @playlists.each do |p| %>
+          <option value="<%= p.id %>"><%= p.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <input type="submit" value="AWW YEAH">
+  </form>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>PLAYLIST NAME NO GOOD?</h1>
+<h1>CHANGE!!</h1>
+<%= @error if @error %>
+<form action="/playlists/<%= @playlist.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="text" name="playlist[name]" placeholder="NAME" value="<%= @playlist.name %>">
+  <input type="submit" value="YEAH!">
+</form>
