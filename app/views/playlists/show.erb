@@ -1,7 +1,7 @@
-<h1>YOUR LIT PLAYLIST: <%= @playlist.name %></h1>
+<h1>DIS BUT A PLAYLIST CALLED <%= @playlist.name %></h1>
 
 <div id="songs">
-  SONG LIST:
+  JAM LIST:
   <ol>
     <% if @playlist.songs.empty? %>
       BOO NO SONGS.
@@ -16,7 +16,7 @@
           <button type="submit">EDIT IT</button>
         </form>
         <form action="/songs/<%= s.id %>" method="post">
-          <button type="submit" name="button" onclick="return confirm('Are you sure?')">DUMP IT</button>
+          <button type="submit" name="button" onclick="return confirm('YOU FREAKIN SURE?')">DUMP IT</button>
         </form>
       </li>
       <% end %>

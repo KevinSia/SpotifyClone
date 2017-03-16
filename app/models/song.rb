@@ -5,6 +5,6 @@ class Song < ActiveRecord::Base
 	# This is Sinatra! Remember to create a migration!
 
   def details
-    "(#{duration}) #{title.capitalize} - #{artist.capitalize} #{[album.capitalize]}"
+    "(#{duration}) #{title.capitalize} - #{artist.capitalize} [#{album.capitalize}]"
   end
 end
