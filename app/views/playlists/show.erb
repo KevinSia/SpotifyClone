@@ -10,15 +10,17 @@
       <% end %>
     <% else %>
       <% @playlist.songs.each do |s| %>
-      <li>
-        <%= s.details %>
-        <form action="/songs/<%= s.id %>/edit" method="get">
-          <button type="submit">EDIT IT</button>
-        </form>
-        <form action="/songs/<%= s.id %>" method="post">
-          <button type="submit" name="button" onclick="return confirm('YOU FREAKIN SURE?')">DUMP IT</button>
-        </form>
-      </li>
+        <li>
+          <%= s.details %>
+          <% if current_user.id == @playlist.user_id %>
+            <form action="/songs/<%= s.id %>/edit" method="get">
+              <button type="submit">EDIT IT</button>
+            </form>
+            <form action="/songs/<%= s.id %>" method="post">
+              <button type="submit" name="button" onclick="return confirm('YOU FREAKIN SURE?')">DUMP IT</button>
+            </form>
+          <% end %>
+        </li>
       <% end %>
     <% end %>
   </ol>
